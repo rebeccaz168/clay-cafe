@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Shop from './pages/ShopPage';
+import Checkout from './pages/CheckoutPage';
+// import PaymentPage from './components/PaymentPage';
+import { CssBaseline, Container } from '@mui/material';
+import { CartProvider } from './components/CartContext';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <CartProvider>
+    <Router>
+      <CssBaseline />
+      <Container maxWidth="lg">
+        <Routes>
+          <Route path="/" element={<Shop />} />
+          {/* <Route path="/checkout" element={<Checkout />} /> */}
+          {/* <Route path="/payment" element={<PaymentPage />} /> */}
+        </Routes>
+      </Container>
+    </Router>
+    </CartProvider>
   );
 }
 
