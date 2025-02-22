@@ -9,6 +9,7 @@ export const CartProvider = ({ children }) => {
     return savedCart ? JSON.parse(savedCart) : [];
   });
 
+
   useEffect(() => {
     // Update sessionStorage whenever cartItems change
     sessionStorage.setItem('cart', JSON.stringify(cartItems));
@@ -31,9 +32,13 @@ export const CartProvider = ({ children }) => {
   const clearCart = () => {
     setCartItems([]);
   };
+ 
+  // Calculate total price, update whenever cartItems change (does this need to be in an use Effect hook?)*** 
+  const totalPrice = cartItems.reduce((acc, item) => acc + item.price, 0);
+
 
   return (
-    <CartContext.Provider value={{ cartItems, addToCart, removeFromCart, clearCart }}>
+    <CartContext.Provider value={{ cartItems, totalPrice, addToCart, removeFromCart, clearCart }}>
       {children}
     </CartContext.Provider>
   );

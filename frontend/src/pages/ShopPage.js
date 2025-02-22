@@ -1,19 +1,17 @@
 import React from 'react';
 import {useCart} from '../components/CartContext'
+import products from '../data/products.json';
 
 import ProductCard from '../components/ProductCard';
-import { Grid2, Button, Typography, Box} from '@mui/material';
+import { Grid2, IconButton, Typography, Box} from '@mui/material';
+import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import { useNavigate } from 'react-router-dom';
 
-const products = [
-  { id: 1, title: 'Cozy Sweater', price: 5000, description: 'A warm, comfy sweater', imageUrl: '/path/to/image.jpg' },
-  { id: 2, title: 'Soft Scarf', price: 2000, description: 'A soft and cozy scarf', imageUrl: '/path/to/image2.jpg' },
-  // Add more products here
-];
 
 function Shop() {
   const { addToCart, cartItems } = useCart(); 
   console.log(cartItems)
+  console.log(products)
 
   const navigate = useNavigate();
 
@@ -27,21 +25,42 @@ function Shop() {
 
   return (
     <div>
-      <Typography variant="h3" gutterBottom>
-        Shop Cozy Threads
-      </Typography>
-      <Grid2 container spacing={4}>
-        {products.map(product => (
-          <Grid2 item xs={12} sm={6} md={4} key={product.id}>
-            <ProductCard product={product} onAddToCart={handleAddToCart} />
-          </Grid2>
-        ))}
-      </Grid2>
-      <Box mt={4}>
-        <Button variant="contained" color="primary" onClick={handleCheckout}>
-          Go to Checkout
-        </Button>
+      <Box 
+        display="flex" 
+        flexDirection="column"
+        alignItems="left"
+        position="sticky"
+        top={0}
+        bgcolor="#C68B59"
+        zIndex={1000}
+        p={2}
+        boxShadow={2}
+      >
+        <Box 
+          display="flex" 
+          justifyContent="space-between" 
+          alignItems="center" 
+          width="100%"
+        >
+          <Typography variant="h4" sx = {{fontFamily: "'Patrick Hand', cursive"}} gutterBottom>
+            Cozy Threads
+          </Typography>
+          <IconButton color="primary" onClick={handleCheckout}>
+            <ShoppingBasketIcon />
+          </IconButton>
+        </Box>
+        
+        <Typography variant="subtitle1" color="textSecondary">
+          High-quality, ethically-sourced apparel and accessories.
+        </Typography>
       </Box>
+        <Grid2 container spacing={4}>
+          {products.map(product => (
+            <Grid2 item xs={12} sm={6} md={4} key={product.id}>
+              <ProductCard product={product} onAddToCart={handleAddToCart} />
+            </Grid2>
+          ))}
+        </Grid2>
     </div>
   );
 }
