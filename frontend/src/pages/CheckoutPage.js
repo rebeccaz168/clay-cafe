@@ -1,8 +1,8 @@
 import React from 'react';
-import { List, ListItem, ListItemText, Typography, Button, Box } from '@mui/material';
+import { List, Typography, Button, Box } from '@mui/material';
 import {useCart} from '../components/CartContext'
 import { useNavigate } from 'react-router-dom';
-import ProductCard from '../components/ProductCard';
+import CheckoutCard from '../components/CheckoutCard';
 
 function Checkout() {
   const {cartItems, removeFromCart, clearCart} = useCart(); 
@@ -13,6 +13,12 @@ function Checkout() {
     navigate('/payment');
   };
 
+  const handleRemoveFromCart = (product) => {
+    console.log("inside handle remove from cart", product)
+    console.log("inside handle remove from cart", product.id)
+    removeFromCart(product.id)
+  };
+
   return (
     <div>
       <Typography variant="h4" gutterBottom>
@@ -20,7 +26,7 @@ function Checkout() {
       </Typography>
       <List>
         {cartItems.map((item, index) => (
-          <ProductCard key={index} product = {item}/>
+          <CheckoutCard key={index} product = {item} onRemoveFromCart={handleRemoveFromCart} />
         ))}
       </List>
       <Box mt={3}>

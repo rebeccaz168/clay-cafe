@@ -21,6 +21,9 @@ export const CartProvider = ({ children }) => {
 
   // Function to remove items from the cart
   const removeFromCart = (itemId) => {
+    console.log("inside the remove from cart")
+    console.log("ItemId", itemId)
+    console.log(cartItems)
     setCartItems((prevItems) => prevItems.filter((item) => item.id !== itemId));
   };
 

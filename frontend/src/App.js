@@ -14,7 +14,7 @@ function App() {
       <Container maxWidth="lg">
         <Routes>
           <Route path="/" element={<Shop />} />
-          {/* <Route path="/checkout" element={<Checkout />} /> */}
+          <Route path="/checkout" element={<Checkout />} />
           {/* <Route path="/payment" element={<PaymentPage />} /> */}
         </Routes>
       </Container>
