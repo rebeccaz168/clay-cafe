@@ -1,22 +1,28 @@
 import React from 'react';
 import { List, Typography, Button, Box } from '@mui/material';
-import {useCart} from '../components/CartContext'
+import { useCart } from '../components/CartContext';
 import { useNavigate } from 'react-router-dom';
 import CheckoutCard from '../components/CheckoutCard';
 
 function Checkout() {
-  const {cartItems, removeFromCart, totalPrice, clearCart} = useCart(); 
- 
+  const { cartItems, totalPrice, clearCart, increaseQuantity, decreaseQuantity, removeFromCart } = useCart();
   const navigate = useNavigate();
 
   const handleProceedToPayment = () => {
     navigate('/payment');
   };
 
-  const handleRemoveFromCart = (product) => {
-    console.log("inside handle remove from cart", product)
-    console.log("inside handle remove from cart", product.id)
-    removeFromCart(product.id)
+  const handleRemoveFromCart = (productId) => {
+    console.log("inside handle remove cart");
+    removeFromCart(productId);
+  };
+
+  const handleIncreaseQuantity = (productId) => {
+    increaseQuantity(productId);
+  };
+
+  const handleDecreaseQuantity = (productId) => {
+    decreaseQuantity(productId);
   };
 
   return (
@@ -25,19 +31,26 @@ function Checkout() {
         Checkout
       </Typography>
       <List>
-        {cartItems.map((item, index) => (
-          <CheckoutCard key={index} product = {item} onRemoveFromCart={handleRemoveFromCart} />
+      {Object.values(cartItems).map((item, index) => (
+          <CheckoutCard
+            key={index}
+            product={item}
+            onRemoveFromCart={handleRemoveFromCart}
+            onIncreaseQuantity={handleIncreaseQuantity}
+            onDecreaseQuantity={handleDecreaseQuantity}
+            quantity={item.quantity}
+          />
         ))}
       </List>
-      <Typography variant="h5" >
-        Total Price : ${totalPrice}
+      <Typography variant="h5">
+        Total Price: ${totalPrice}
       </Typography>
       <Box mt={3}>
         <Button variant="contained" color="primary" onClick={handleProceedToPayment}>
           Proceed to Payment
         </Button>
-        <Button variant = "contained" color="primary" onClick = {clearCart}>
-            Clear Cart 
+        <Button variant="contained" color="primary" onClick={clearCart}>
+          Clear Cart
         </Button>
       </Box>
     </div>

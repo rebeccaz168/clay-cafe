@@ -10,9 +10,6 @@ import { useNavigate } from 'react-router-dom';
 
 function Shop() {
   const { addToCart, cartItems } = useCart(); 
-  console.log(cartItems)
-  console.log(products)
-
   const navigate = useNavigate();
 
   const handleAddToCart = (product) => {
@@ -47,6 +44,7 @@ function Shop() {
           </Typography>
           <IconButton color="primary" onClick={handleCheckout}>
             <ShoppingBasketIcon />
+            <Typography> {Object.keys(cartItems).length} </Typography>
           </IconButton>
         </Box>
         
