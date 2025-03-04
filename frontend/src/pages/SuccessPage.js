@@ -23,7 +23,6 @@ function SuccessPage() {
   
         // Attempt to parse the response as JSON
         const data = await response.json();
-        console.log("Fetched payment details:", data);
 
         setPaymentDetails(data);
       } catch (error) {

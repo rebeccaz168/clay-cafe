@@ -78,9 +78,7 @@ export const CartProvider = ({ children }) => {
 
   // Function to clear the cart
   const clearCart = () => {
-    console.log("inside clear cart");
     setCartItems({});
-    console.log(cartItems);
   };
 
   // Calculate total price in dollars

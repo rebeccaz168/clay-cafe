@@ -13,7 +13,6 @@ function Checkout() {
   };
 
   const handleRemoveFromCart = (productId) => {
-    console.log("inside handle remove cart");
     removeFromCart(productId);
   };
 
