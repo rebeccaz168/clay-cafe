@@ -1,5 +1,4 @@
 require('dotenv').config();
-const path = require('path');
 const express = require('express');
 const cors = require('cors');
 const paymentRoutes = require('./routes/paymentRoutes');
@@ -12,7 +11,7 @@ app.use(cors());
 
 // redirects to the index.html, react router handles in frontend
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "frontend/build", "index.html"));
+  res.sendFile(__dirname + '/../frontend/build/index.html');
 });
 
 // Routes
