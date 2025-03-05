@@ -10,9 +10,9 @@ app.use(express.json());
 app.use(cors()); 
 
 // redirects to the index.html, react router handles in frontend
-app.get("*", (req, res) => {
-  res.sendFile(__dirname + '/../frontend/build/index.html');
-});
+// app.get("*", (req, res) => {
+//   res.sendFile(__dirname + '/../frontend/build/index.html');
+// });
 
 // Routes
 app.use('/api/payment', paymentRoutes);
