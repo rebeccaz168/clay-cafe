@@ -9,6 +9,11 @@ app.use(express.json());
 // allows app to communicate w/ fronted 
 app.use(cors()); 
 
+// redirects to the index.html, react router handles in frontend
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client/build", "index.html"));
+});
+
 // Routes
 app.use('/api/payment', paymentRoutes);
 
