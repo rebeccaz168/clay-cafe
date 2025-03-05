@@ -14,7 +14,7 @@ function SuccessPage() {
     clearCart()
     const fetchPaymentDetails = async () => {
       try {
-        const response = await fetch(`http://localhost:5001/api/payment/payment-intent/${paymentIntentId}`);
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/api/payment/payment-intent/${paymentIntentId}`);
         
         // Check if the response is successful
         if (!response.ok) {
@@ -31,7 +31,7 @@ function SuccessPage() {
     };
   
     fetchPaymentDetails();
-  }, [paymentIntentId]);
+  }, [paymentIntentId, clearCart]);
   
 
 

@@ -12,7 +12,8 @@ function Payment(props) {
 
 // create the payment intent
   useEffect(() => {
-    fetch("http://localhost:5001/api/payment/create-payment-intent", {
+    // use : http://localhost:5001 for local env. 
+    fetch(`${process.env.REACT_APP_API_URL}/api/payment/create-payment-intent`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ amount: totalPrice * 100 }) 
@@ -20,7 +21,7 @@ function Payment(props) {
       .then((res) => res.json())
       .then(({ clientSecret }) => setClientSecret(clientSecret))
       .catch((error) => console.error("Error:", error));
-  }, []);  
+  }, [totalPrice]);  
 
 
   return (
