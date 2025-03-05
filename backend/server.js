@@ -12,7 +12,7 @@ app.use(cors());
 
 // redirects to the index.html, react router handles in frontend
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "client/build", "index.html"));
+  res.sendFile(path.join(__dirname, "frontend/build", "index.html"));
 });
 
 // Routes
