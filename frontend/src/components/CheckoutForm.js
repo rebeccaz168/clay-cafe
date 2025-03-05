@@ -27,7 +27,7 @@ function CheckoutForm() {
     const result = await stripe.confirmPayment({
       elements,
       confirmParams: {
-        return_url: "http://localhost:3000/success",
+        return_url: "https://cozy-threads-stripe.onrender.com/success", // to test locally http://localhost:3000/success 
       },
     });
 

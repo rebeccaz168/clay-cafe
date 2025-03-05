@@ -44,7 +44,7 @@ function Shop() {
           </Typography>
           <IconButton color="primary" onClick={handleCheckout}>
             <ShoppingBasketIcon />
-            <Typography> {Object.keys(cartItems).length} </Typography>
+            <Typography> {Object.values(cartItems).reduce((total, item) => total + item.quantity, 0)} </Typography>
           </IconButton>
         </Box>
         
