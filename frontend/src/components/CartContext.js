@@ -1,4 +1,4 @@
-import React, { createContext, useState, useContext, useEffect } from 'react';
+import React, { createContext, useState, useContext, useEffect, useMemo} from 'react';
 
 const CartContext = createContext();
 
@@ -81,11 +81,13 @@ export const CartProvider = ({ children }) => {
     setCartItems({});
   };
 
-  // Calculate total price in dollars
-  const totalPrice = Object.values(cartItems).reduce(
-    (acc, item) => acc + item.price * item.quantity, 
-    0
-  );
+  // Calculate total price in dollars - use memo because only change totalPrice when cartItems change
+  const totalPrice = useMemo(() => {
+    return Object.values(cartItems).reduce(
+      (acc, item) => acc + item.price * item.quantity, 
+      0
+    );
+  }, [cartItems]);
 
 
   return (
