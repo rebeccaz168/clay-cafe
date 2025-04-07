@@ -7,3 +7,6 @@ node server.js
 
 Built with MaterialUI, React, Express, Node, and Stripe Payments API 
 Hosted on Render 
+
+# Known Issues : 
+- render takes a moment to load w/ the Stripe payments integration
