@@ -1,45 +1,38 @@
 [
     {
       "id": 1,
-      "title": "Mustard Sweater",
-      "price": 120,
-      "description": "dash of bold color with a giraffe",
-      "imageUrl": "https://themomedit.com/wp-content/uploads/2021/09/Anthropologie-Zebra-Sweater-Fall-Flares-Boots-3-1068x1597.jpg"
+      "title": "Bird Tea Cup",
+      "price": 15,
+      "description": "dainty little cyan blue cup ~ perfect for a cup of tea ",
+      "imageUrl": "http://localhost:3000/images/birdMug.png"
     },
     {
       "id": 2,
-      "title": "Oatmeal Sweater",
-      "price": 140,
-      "description": "A soft and indulgent sweater, perfect basic for your wardrobe",
-      "imageUrl": "https://nuiorganics.com/cdn/shop/products/Fishline_Oatmeal_Womens.jpg?v=1629439165&width=1206"
+      "title": "Black Vase",
+      "price": 10,
+      "description": "small black vase with both matte and glossy black",
+      "imageUrl": "http://localhost:3000/images/blackvase.png"
     },
     {
       "id": 3, 
-      "title": "Teal Sweater", 
-      "price": 130, 
-      "description": "the perfect vibrant teal, wonderfully soft knit", 
-      "imageUrl": "https://nuiorganics.com/cdn/shop/files/nuc10325_Teal7_193db302-0238-4c12-abc8-44f04619a527.jpg?v=1722847639&width=1206"
+      "title": "Dipping Plate", 
+      "price": 15, 
+      "description": "Ocean inspired dipping plate ~ perfect for some dumplings and sauce", 
+      "imageUrl": "http://localhost:3000/images/dippingPlate.png"
     }, 
     {
       "id": 4, 
-      "title": "Ribbed Crochet Beanie", 
-      "price": 130, 
-      "description": "had crochet checkard beanies", 
-      "imageUrl": "https://hayhaycrochet.com/wp-content/uploads/2021/12/IMG_0098_jpg.jpg"
+      "title": "Heart Mugs", 
+      "price": 30, 
+      "description": "2 pink and sand colored mugs ~ perfect for a cappucino", 
+      "imageUrl": "http://localhost:3000/images/heartmugs.png"
     }, 
     {
       "id": 5, 
-      "title": "Thick Wool Beanie", 
-      "price": 130, 
-      "description": "had knit green beanie", 
-      "imageUrl": "https://loopymango.com/cdn/shop/files/mohairbeanie_readymade_1080x.png?v=1689605445"
-    }, 
-    {
-      "id": 6, 
-      "title": "Coffee Sweater", 
-      "price": 130, 
-      "description": "Alpaca wool sweater", 
-      "imageUrl": "https://i.etsystatic.com/10131647/r/il/0aa423/3454520949/il_1588xN.3454520949_887s.jpg"
+      "title": "Mermaid Mug", 
+      "price": 20, 
+      "description": "multi-colored mug ~ perfect for a latte", 
+      "imageUrl": "http://localhost:3000/images/mermaidmug.png"
     }
   ]
   

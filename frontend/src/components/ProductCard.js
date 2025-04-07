@@ -12,64 +12,92 @@ export function ProductCard({ product, onAddToCart }) {
     <Card
       sx={{
         width: 300,
-        height: 400,
+        height: 460, 
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
-        backgroundColor: "#FFFAF0",
-        borderRadius: "20px",
-        boxShadow: "5px 5px 15px rgba(0,0,0,0.1)",
+        backgroundColor: "#F8FAFC",
+        borderRadius: "16px",
+        boxShadow: "0 8px 24px rgba(0,0,0,0.08)",
         overflow: "hidden",
         transition: "transform 0.2s ease-in-out",
         "&:hover": {
-          transform: "scale(1.05)",
+          transform: "scale(1.03)",
         },
       }}
     >
-      <CardActionArea>
+      {/* Image section */}
+      <CardActionArea > 
         <CardMedia
           component="img"
-          height="180"
           image={product.imageUrl}
           alt={product.title}
           sx={{
             objectFit: "cover",
-            clipPath: "polygon(0 0, 100% 0, 100% 90%, 0 80%)", 
+            width: "100%",
+            height: "290px", 
           }}
         />
-        <CardContent sx={{ textAlign: "center" }}>
-          <Typography
-            gutterBottom
-            variant="h5"
-            component="div"
-            sx={{
-              fontFamily: "'Patrick Hand', cursive",
-              fontSize: "1.5rem",
-              color: "#7A4A23", 
-            }}
-          >
-            {product.title}
-          </Typography>
-          <Typography variant="body2" sx={{ color: "#5A5A5A" }}>
-            {product.description}
-          </Typography>
-        </CardContent>
       </CardActionArea>
-      <CardActions sx={{ justifyContent: "center", paddingBottom: "10px" }}>
+
+      {/* Content section */}
+      <CardContent >
+        <Typography
+          variant="h6"
+          component="div"
+          sx={{
+            fontFamily: "'Quicksand', sans-serif",
+            fontWeight: 600,
+            fontSize: "1.3rem",
+            color: "#1C2E4A",
+          }}
+        >
+          {product.title}
+        </Typography>
+
+        <Typography
+          variant="body2"
+          sx={{
+            fontFamily: "'Quicksand', sans-serif",
+            color: "#4B5563",
+            minHeight: "3em",
+            fontSize: "0.95rem",
+          }}
+        >
+          {product.description}
+        </Typography>
+
+        <Typography
+          variant="h6"
+          sx={{
+            fontFamily: "'Quicksand', sans-serif",
+            color: "#3B82F6",
+            fontWeight: 700,
+            fontSize: "1.1rem",
+          }}
+        >
+          ${product.price}
+        </Typography>
+      {/* Button section */}
+      <CardActions sx={{ justifyContent: "center" }}>
         <Button
           size="small"
           onClick={() => onAddToCart(product)}
           variant="contained"
           sx={{
-            backgroundColor: "#C68B59",
-            "&:hover": { backgroundColor: "#A76D42" },
-            borderRadius: "30px",
+            backgroundColor: "#3B82F6",
+            "&:hover": { backgroundColor: "#2563EB" },
+            borderRadius: "10px",
             fontWeight: "bold",
+            textTransform: "none",
+            fontFamily: "'Quicksand', sans-serif",
+            width: "40%", 
           }}
         >
           Add to Cart
         </Button>
       </CardActions>
+      </CardContent>
     </Card>
   );
 }
