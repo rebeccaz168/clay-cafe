@@ -1,5 +1,5 @@
-# cozy-threads
-a web application demo for a store named cozy-threads, which sells high-quality, ethically-sourced apparel and accessories. Link to the app: https://cozy-threads-stripe.onrender.com/. 
+# clay-cafe 
+a web application demo for a store named the clay cafe, which sells hand crafted clay pieces. Link to the app: https://cozy-threads-stripe.onrender.com/. 
 # Running the front-end : 
 npm run start 
 # Running the backend : 
