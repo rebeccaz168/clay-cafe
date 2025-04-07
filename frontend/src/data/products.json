@@ -4,35 +4,35 @@
       "title": "Bird Tea Cup",
       "price": 15,
       "description": "dainty little cyan blue cup ~ perfect for a cup of tea ",
-      "imageUrl": "http://localhost:3000/images/birdMug.png"
+      "imageUrl": "https://github.com/rebeccaz168/clay-cafe/blob/master/frontend/public/images/birdMug.png"
     },
     {
       "id": 2,
       "title": "Black Vase",
       "price": 10,
       "description": "small black vase with both matte and glossy black",
-      "imageUrl": "http://localhost:3000/images/blackvase.png"
+      "imageUrl": "https://github.com/rebeccaz168/clay-cafe/blob/master/frontend/public/images/blackvase.png"
     },
     {
       "id": 3, 
       "title": "Dipping Plate", 
       "price": 15, 
       "description": "Ocean inspired dipping plate ~ perfect for some dumplings and sauce", 
-      "imageUrl": "http://localhost:3000/images/dippingPlate.png"
+      "imageUrl": "https://github.com/rebeccaz168/clay-cafe/blob/master/frontend/public/images/dippingPlate.png"
     }, 
     {
       "id": 4, 
       "title": "Heart Mugs", 
       "price": 30, 
       "description": "2 pink and sand colored mugs ~ perfect for a cappucino", 
-      "imageUrl": "http://localhost:3000/images/heartmugs.png"
+      "imageUrl": "https://github.com/rebeccaz168/clay-cafe/blob/master/frontend/public/images/heartmugs.png"
     }, 
     {
       "id": 5, 
       "title": "Mermaid Mug", 
       "price": 20, 
       "description": "multi-colored mug ~ perfect for a latte", 
-      "imageUrl": "http://localhost:3000/images/mermaidmug.png"
+      "imageUrl": "https://github.com/rebeccaz168/clay-cafe/blob/master/frontend/public/images/mermaidmug.png"
     }
   ]
   
