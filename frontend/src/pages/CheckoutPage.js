@@ -45,7 +45,7 @@ function Checkout() {
         Total Price: ${totalPrice}
       </Typography>
       <Box mt={3}>
-        <Button variant="contained" color="primary" onClick={handleProceedToPayment}>
+        <Button variant="contained" color="primary" onClick={handleProceedToPayment}  disabled={Object.keys(cartItems).length === 0}>
           Proceed to Payment
         </Button>
         <Button variant="contained" color="primary" onClick={clearCart}>
